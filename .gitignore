@@ -1,0 +1,10 @@
+frontEndApp
+frontApp.exe
+brockerApp
+authApp
+listenerApp
+loggerServiceApp
+mailerApp
+mongo
+postgres
+rabbitmq
