@@ -15,7 +15,7 @@ services:
       - caddy_config:/config
 
   front-end:
-    image: manzcube/front-end:1.0.0
+    image: manzcube/front-end:1.0.1
     deploy:
       mode: replicated
       replicas: 1

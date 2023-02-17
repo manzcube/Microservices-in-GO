@@ -15,7 +15,7 @@ func main() {
 	})
 
 	fmt.Println("Starting front end service on port 8081")
-	err := http.ListenAndServe(":80", nil) // Because broker is running on 8080
+	err := http.ListenAndServe(":8081", nil) // Because broker is running on 8080
 	if err != nil {
 		log.Println("Problem when serving frontend:", err.Error())
 		log.Panic(err)
@@ -52,7 +52,7 @@ func render(w http.ResponseWriter, t string) {
 
 	data.BrokerURL = os.Getenv("BROKER_URL")
 
-	if err := tmpl.Execute(w, nil); err != nil {
+	if err := tmpl.Execute(w, data); err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
 }
